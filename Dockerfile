@@ -6,8 +6,8 @@ COPY ["./requeriments.txt" , "/app"]
 
 RUN pip install -r requeriments.txt
 
-EXPOSE 7667
-
 COPY ["." , "/app"]
 
-CMD [ "python" , "app.py" ]
+EXPOSE 7667
+
+CMD [ "python" , "main.py" ]
