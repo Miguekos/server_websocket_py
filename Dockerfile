@@ -1,13 +1,13 @@
 FROM python:3.6
 
-COPY . /app
-
 WORKDIR /app
 
-RUN apt-get update
-RUN apt-get install wkhtmltopdf -y
-RUN pip install -r requeriment.txt
+COPY ["./requeriments.txt" , "/app"]
 
-EXPOSE 5454
+RUN pip install -r requeriments.txt
+
+EXPOSE 7667
+
+COPY ["." , "/app"]
 
 CMD [ "python" , "app.py" ]
